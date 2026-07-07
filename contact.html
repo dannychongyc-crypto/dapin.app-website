@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact Us — Dap IN</title>
+<meta name="description" content="Questions, partnerships, press, or just want to talk — Dap IN is easy to reach."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ======== Nav ======== -->
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html" aria-label="Dap IN home">
+      <img src="logo_green_on_transparent_background.png" alt="Dap IN"/>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="host-guide.html">Host Guide</a></li>
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ======== Contact ======== -->
+<section class="section white">
+  <div class="container" style="max-width: 960px;">
+    <div style="text-align: center;">
+      <p class="section-label">Contact us</p>
+      <h1 class="section-headline" style="margin: 0 auto;">Say hello.</h1>
+      <p class="body-copy muted" style="margin: 20px auto 0; max-width: 34em;">
+        Questions, partnerships, press, or just want to talk — we're easy to reach.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form" novalidate>
+        <div class="form-field">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text" placeholder="Your name" required/>
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" placeholder="you@example.com" required/>
+        </div>
+        <div class="form-field">
+          <label for="contact-subject">Subject</label>
+          <select id="contact-subject" name="subject">
+            <option>General enquiry</option>
+            <option>Hosting</option>
+            <option>Partnership</option>
+            <option>Press</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-note" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-links">
+        <a class="contact-link-row" href="mailto:hello@dapin.app">
+          <span class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <span>
+            <span class="contact-link-label">Email</span><br/>
+            <span class="contact-link-handle">hello@dapin.app</span>
+          </span>
+        </a>
+        <a class="contact-link-row" href="https://www.instagram.com/dapin.app/" target="_blank" rel="noopener">
+          <span class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </span>
+          <span>
+            <span class="contact-link-label">Instagram</span><br/>
+            <span class="contact-link-handle">@dapin.app</span>
+          </span>
+        </a>
+        <a class="contact-link-row" href="https://www.tiktok.com/@dap.in.social" target="_blank" rel="noopener">
+          <span class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </span>
+          <span>
+            <span class="contact-link-label">TikTok</span><br/>
+            <span class="contact-link-handle">@dap.in.social</span>
+          </span>
+        </a>
+        <a class="contact-link-row" href="https://www.threads.com/@dapin.app" target="_blank" rel="noopener">
+          <span class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7.5c-1.333-3-3.667-4.5-7-4.5-5 0-8 3.5-8 9s3 9 8 9c4 0 6.5-2 6.5-5 0-2.5-2-4-4.5-4-2 0-3.5 1-3.5 2.5S11.5 17 13 17"/><path d="M14 11.5c-3.5-1-7 .5-7 3"/></svg>
+          </span>
+          <span>
+            <span class="contact-link-label">Threads</span><br/>
+            <span class="contact-link-handle">@dapin.app</span>
+          </span>
+        </a>
+        <a class="contact-link-row" href="https://xhslink.com/m/5fbpliMMRcX" target="_blank" rel="noopener">
+          <span class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="4"/><text x="12" y="15.5" text-anchor="middle" font-size="8" font-weight="700" fill="currentColor" stroke="none" font-family="inherit">XHS</text></svg>
+          </span>
+          <span>
+            <span class="contact-link-label">XHS</span><br/>
+            <span class="contact-link-handle">Dap IN on Xiaohongshu</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Footer ======== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-wordmark">Dap <span class="wordmark-pill">IN</span></div>
+        <p class="footer-tagline">Real plans. Real people. Real life.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="host-guide.html">Host Guide</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://www.dapin.app/payment" target="_blank" rel="noopener">Payment Policy</a></li>
+          <li><a href="https://www.dapin.app/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="https://www.dapin.app/terms" target="_blank" rel="noopener">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <div class="footer-social-grid">
+          <a href="https://www.instagram.com/dapin.app/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@dap.in.social" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </a>
+          <a href="https://www.threads.com/@dapin.app" target="_blank" rel="noopener" aria-label="Threads">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7.5c-1.333-3-3.667-4.5-7-4.5-5 0-8 3.5-8 9s3 9 8 9c4 0 6.5-2 6.5-5 0-2.5-2-4-4.5-4-2 0-3.5 1-3.5 2.5S11.5 17 13 17"/><path d="M14 11.5c-3.5-1-7 .5-7 3"/></svg>
+          </a>
+          <a href="https://xhslink.com/m/5fbpliMMRcX" target="_blank" rel="noopener" aria-label="XHS (Xiaohongshu)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="4"/><text x="12" y="15.5" text-anchor="middle" font-size="8" font-weight="700" fill="currentColor" stroke="none" font-family="inherit">XHS</text></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Dap IN. All rights reserved.</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
