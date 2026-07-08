@@ -135,6 +135,55 @@
     }, set.interval);
   });
 
+  /* ---------- Download modal ---------- */
+
+  var downloadModal = document.getElementById('download-modal');
+  if (downloadModal) {
+    var lastFocused = null;
+
+    var openModal = function () {
+      lastFocused = document.activeElement;
+      downloadModal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () {
+        downloadModal.classList.add('open');
+      });
+      var first = downloadModal.querySelector('.store-btn');
+      if (first) first.focus();
+    };
+
+    var closeModal = function () {
+      if (downloadModal.hidden) return;
+      downloadModal.classList.remove('open');
+      document.body.style.overflow = '';
+      downloadModal.addEventListener('transitionend', function onEnd(e) {
+        if (e.target !== downloadModal) return;
+        downloadModal.hidden = true;
+        downloadModal.removeEventListener('transitionend', onEnd);
+      });
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    };
+
+    document.querySelectorAll('[data-download-trigger]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    downloadModal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    downloadModal.addEventListener('click', function (e) {
+      if (e.target === downloadModal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
   /* ---------- Contact form ---------- */
 
   var form = document.querySelector('.contact-form');
