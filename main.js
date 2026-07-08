@@ -143,7 +143,7 @@
       e.preventDefault();
       var note = form.querySelector('.form-note');
       if (note) {
-        note.textContent = 'Thanks — your message is on its way. We’ll get back to you soon.';
+        note.textContent = 'Thanks, your message is on its way. We’ll get back to you soon.';
       }
       form.reset();
     });
