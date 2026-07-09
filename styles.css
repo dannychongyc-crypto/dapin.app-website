@@ -478,6 +478,9 @@ a {
 
 .steps-vertical .step {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
   gap: 24px;
   padding-bottom: 44px;
   position: relative;
@@ -496,6 +499,7 @@ a {
 .steps-vertical .step-number {
   margin-bottom: 0;
   box-shadow: none;
+  flex-shrink: 0;
 }
 
 .steps-vertical .step-body {
