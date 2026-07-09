@@ -902,12 +902,6 @@ a {
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 1024px) {
-  .hero-phone {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   .section {
     padding: 72px 0;
@@ -963,6 +957,7 @@ a {
   .hero-inner {
     padding-top: 40px;
     padding-bottom: 88px;
+    gap: 20px;
   }
 
   .persona-grid,
@@ -1253,4 +1248,18 @@ a {
   max-width: 100%;
   border-radius: 40px;
   box-shadow: var(--shadow-card);
+}
+
+/* Responsive hero phone size (after base .phone-shot so these win) */
+
+@media (max-width: 1024px) {
+  .phone-shot {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .phone-shot {
+    width: clamp(116px, 34vw, 190px);
+  }
 }
