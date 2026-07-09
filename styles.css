@@ -590,12 +590,18 @@ a {
   font-size: 17px;
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+  margin-top: 48px;
+  max-width: 920px;
+}
+
 .team-card {
   display: flex;
   align-items: center;
   gap: 28px;
-  max-width: 560px;
-  margin-top: 48px;
 }
 
 .avatar-placeholder {
@@ -973,6 +979,10 @@ a {
 
   .step-number {
     box-shadow: none !important;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
   }
 
   .team-card {
