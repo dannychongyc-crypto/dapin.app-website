@@ -1246,8 +1246,7 @@ a {
 .phone-shot {
   width: 300px;
   max-width: 100%;
-  border-radius: 40px;
-  box-shadow: var(--shadow-card);
+  filter: drop-shadow(0 12px 28px rgba(26, 23, 20, 0.18));
 }
 
 /* Responsive hero phone size (after base .phone-shot so these win) */
