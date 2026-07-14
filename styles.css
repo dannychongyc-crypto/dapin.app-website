@@ -1400,3 +1400,107 @@ a {
     white-space: normal;
   }
 }
+
+/* ============================================================
+   Host page hero (host-features)
+   ============================================================ */
+
+/* anchor targets clear the sticky nav */
+section[id] {
+  scroll-margin-top: 92px;
+}
+
+.host-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.host-hero-copy {
+  flex: 1 1 54%;
+  min-width: 0;
+}
+
+.host-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.host-hero-visual {
+  flex: 1 1 46%;
+  display: flex;
+  justify-content: center;
+}
+
+.host-hero-visual svg {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+}
+
+/* entrance animation: fade + slight upward slide, on page load */
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: heroRise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* ambient float on the connected-circles visual */
+@keyframes hhFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.hh-float {
+  animation: hhFloat 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hh-float-b {
+  animation-duration: 7.5s;
+  animation-delay: -2.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
+    opacity: 1;
+    animation: none;
+  }
+  .hh-float {
+    animation: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .host-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .host-hero-visual {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .host-hero-visual svg {
+    max-width: 340px;
+  }
+}
