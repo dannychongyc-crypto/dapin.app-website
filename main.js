@@ -18,6 +18,39 @@
     });
   }
 
+  /* ---------- Nav dropdown ("Host") ---------- */
+
+  var dropdowns = document.querySelectorAll('.nav-item-dropdown');
+  dropdowns.forEach(function (dd) {
+    var ddToggle = dd.querySelector('.nav-dropdown-toggle');
+    if (!ddToggle) return;
+    ddToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      var open = dd.classList.toggle('open');
+      ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    dropdowns.forEach(function (dd) {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove('open');
+        var t = dd.querySelector('.nav-dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(function (dd) {
+        dd.classList.remove('open');
+        var t = dd.querySelector('.nav-dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
   /* ---------- Scroll reveal (Intersection Observer) ----------
      Fade up: opacity 0 -> 1, translateY 30px -> 0, 600ms ease-out.
      Trigger when the element is 80px into the viewport.
