@@ -168,6 +168,43 @@
     }, set.interval);
   });
 
+  /* ---------- Stat count-up ---------- */
+
+  var statNums = document.querySelectorAll('.stat-num[data-count]');
+  if (statNums.length && 'IntersectionObserver' in window) {
+    var reduceCount = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var countObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          countObserver.unobserve(el);
+          var target = parseFloat(el.getAttribute('data-count')) || 0;
+          var suffix = el.getAttribute('data-suffix') || '';
+          if (reduceCount) {
+            el.textContent = target + suffix;
+            return;
+          }
+          var duration = 1400;
+          var startTime = null;
+          function tick(now) {
+            if (startTime === null) startTime = now;
+            var p = Math.min((now - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+            el.textContent = Math.round(eased * target) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target + suffix;
+          }
+          requestAnimationFrame(tick);
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.3 }
+    );
+    statNums.forEach(function (el) {
+      countObserver.observe(el);
+    });
+  }
+
   /* ---------- Download modal ---------- */
 
   var downloadModal = document.getElementById('download-modal');
