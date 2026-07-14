@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens — warm, premium, not corporate.
+   Tailwind v4 @theme: each custom property generates matching
+   utilities (bg-accent, text-ink, font-mono, etc).
+------------------------------------------------------------------ */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Warm off-white background + deep, confident accent */
+  --color-cream: #faf6ee;
+  --color-cream-deep: #f2ebdd;
+  --color-ink: #1a1714;
+  --color-muted: #7c7367;
+  --color-line: #e7dece;
+  --color-accent: #2f6b45;
+  --color-accent-hover: #255538;
+  --color-accent-soft: #e7f0e9;
+
+  --shadow-soft: 0 10px 40px -12px rgba(26, 23, 20, 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* keep sticky-nav anchor targets clear of the fixed header */
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  /* Small mono labels/tags/numbers */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .placeholder-box {
+    border: 1px dashed var(--color-line);
+    border-radius: 1rem;
+    background:
+      repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 14px,
+        rgba(124, 115, 103, 0.05) 14px,
+        rgba(124, 115, 103, 0.05) 15px
+      );
+  }
+}
