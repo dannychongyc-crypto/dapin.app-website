@@ -1979,3 +1979,74 @@ section[id] {
   color: var(--muted);
   font-size: 16px;
 }
+
+/* ---------- Host page: closing CTA with animated gradient ---------- */
+
+.cta-closing {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-closing-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(45, 90, 61, 0.16), transparent 42%),
+    radial-gradient(circle at 85% 30%, rgba(184, 116, 74, 0.10), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(45, 90, 61, 0.12), transparent 45%),
+    var(--bg-beige);
+  background-size: 180% 180%, 180% 180%, 180% 180%, auto;
+  animation: ctaGradientShift 16s ease-in-out infinite alternate;
+}
+
+@keyframes ctaGradientShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%;
+  }
+  100% {
+    background-position: 20% 30%, 80% 40%, 60% 70%;
+  }
+}
+
+.cta-closing-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.cta-closing-headline {
+  max-width: none;
+  margin: 0 auto;
+}
+
+.cta-closing-sub {
+  max-width: none;
+  margin: 20px auto 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-closing-bg {
+    animation: none;
+  }
+}
+
+/* ---------- Footer contact email ---------- */
+
+.footer-contact {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footer-contact a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--bg-beige);
+}
