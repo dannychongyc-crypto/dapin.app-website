@@ -2058,3 +2058,131 @@ section[id] {
 .footer-contact a:hover {
   color: var(--bg-beige);
 }
+
+/* ============================================================
+   Host Guide page rebuild (host-guide.html only)
+   ============================================================ */
+
+.hg-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* ---- Hero ---- */
+
+.host-guide-hero {
+  min-height: calc(100vh - 72px);
+  background: var(--bg-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 48px 0;
+}
+
+.hg-hero-headline {
+  font-size: clamp(32px, 5.5vw, 60px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 16em;
+  margin: 0 auto;
+}
+
+.hg-hero-sub {
+  font-weight: 300;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 19px);
+  max-width: 40em;
+  margin: 24px auto 0;
+}
+
+.hg-hero-ctas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.btn-outline-accent {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline-accent:hover {
+  background: var(--activity-bg);
+}
+
+/* ---- What it's like cards ---- */
+
+.hg-card {
+  border: 1px solid var(--border);
+}
+
+/* ---- Why host statements ---- */
+
+.hg-statements {
+  margin-top: 40px;
+  max-width: 900px;
+}
+
+.hg-statement {
+  font-size: clamp(22px, 3.4vw, 34px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  padding: 32px 0;
+}
+
+.hg-statement:not(:first-child) {
+  border-top: 1px solid var(--border);
+}
+
+/* generic left-slide reveal variant, shares .reveal's IO + timing */
+.reveal-left {
+  transform: translateX(-24px);
+}
+
+/* ---- Final CTA strip ---- */
+
+.hg-cta-strip {
+  background: var(--ink);
+  text-align: center;
+  padding: 110px 0;
+}
+
+.hg-cta-headline {
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bg-beige);
+  max-width: 18em;
+  margin: 0 auto;
+}
+
+.btn-cream {
+  background: var(--bg-beige);
+  color: var(--ink);
+  padding: 14px 40px;
+}
+
+.btn-cream:hover {
+  box-shadow: 0 8px 20px rgba(26, 23, 20, 0.18);
+}
+
+@media (max-width: 768px) {
+  .hg-statement {
+    padding: 24px 0;
+  }
+  .hg-cta-strip {
+    padding: 72px 0;
+  }
+}
