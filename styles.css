@@ -93,6 +93,7 @@ a {
   font-weight: 700;
   border-radius: 100px;
   padding: 14px 32px;
+  line-height: 1.2;
   cursor: pointer;
   border: 2px solid transparent;
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease,
@@ -2258,6 +2259,9 @@ section[id] {
 }
 
 .pr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
   max-width: 340px;
   background: var(--bg-white);
@@ -2265,6 +2269,10 @@ section[id] {
   border-radius: var(--radius-card);
   padding: 32px;
   box-shadow: var(--shadow-card);
+}
+
+.pr-card .btn {
+  margin-top: auto;
 }
 
 .pr-card.pro {
