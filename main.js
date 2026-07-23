@@ -205,54 +205,57 @@
     });
   }
 
-  /* ---------- Download modal ---------- */
+  /* ---------- Modal helper (download modal, host signup modal) ---------- */
 
-  var downloadModal = document.getElementById('download-modal');
-  if (downloadModal) {
+  function initModal(modalEl, triggerSelector) {
+    if (!modalEl) return;
     var lastFocused = null;
 
     var openModal = function () {
       lastFocused = document.activeElement;
-      downloadModal.hidden = false;
+      modalEl.hidden = false;
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(function () {
-        downloadModal.classList.add('open');
+        modalEl.classList.add('open');
       });
-      var first = downloadModal.querySelector('.store-btn');
+      var first = modalEl.querySelector('.store-btn, .modal-cta');
       if (first) first.focus();
     };
 
     var closeModal = function () {
-      if (downloadModal.hidden) return;
-      downloadModal.classList.remove('open');
+      if (modalEl.hidden) return;
+      modalEl.classList.remove('open');
       document.body.style.overflow = '';
-      downloadModal.addEventListener('transitionend', function onEnd(e) {
-        if (e.target !== downloadModal) return;
-        downloadModal.hidden = true;
-        downloadModal.removeEventListener('transitionend', onEnd);
+      modalEl.addEventListener('transitionend', function onEnd(e) {
+        if (e.target !== modalEl) return;
+        modalEl.hidden = true;
+        modalEl.removeEventListener('transitionend', onEnd);
       });
       if (lastFocused && lastFocused.focus) lastFocused.focus();
     };
 
-    document.querySelectorAll('[data-download-trigger]').forEach(function (btn) {
+    document.querySelectorAll(triggerSelector).forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         openModal();
       });
     });
 
-    downloadModal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+    modalEl.querySelectorAll('[data-modal-close]').forEach(function (el) {
       el.addEventListener('click', closeModal);
     });
 
-    downloadModal.addEventListener('click', function (e) {
-      if (e.target === downloadModal) closeModal();
+    modalEl.addEventListener('click', function (e) {
+      if (e.target === modalEl) closeModal();
     });
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeModal();
     });
   }
+
+  initModal(document.getElementById('download-modal'), '[data-download-trigger]');
+  initModal(document.getElementById('host-modal'), '[data-host-trigger]');
 
   /* ---------- Contact form ---------- */
 

@@ -42,7 +42,7 @@
     <h1 class="hg-hero-headline">Some people wait for a good event.<br/>Hosts make one.</h1>
     <p class="hg-hero-sub">Whether you run a community of 5 or 500, hosting on Dap IN puts you at the centre of something worth showing up for.</p>
     <div class="hg-hero-ctas">
-      <a href="https://in.dapin.app" class="btn btn-primary">Start hosting</a>
+      <button type="button" class="btn btn-primary" data-host-trigger>Start hosting</button>
       <a href="host-features.html" class="btn btn-outline-accent">See host features</a>
     </div>
   </div>
@@ -205,10 +205,23 @@
   <div class="container">
     <p class="hg-cta-headline reveal">Ready to host your first session?</p>
     <div class="reveal" style="transition-delay: 120ms;">
-      <a href="https://in.dapin.app" class="btn btn-cream">Get started</a>
+      <button type="button" class="btn btn-cream" data-host-trigger>Get started</button>
     </div>
   </div>
 </section>
+
+<!-- ======== Host signup modal ======== -->
+<div class="modal-overlay" id="host-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="host-modal-title">
+    <button class="modal-close" type="button" data-modal-close aria-label="Close">&times;</button>
+    <h2 class="modal-title" id="host-modal-title">Ready to host?</h2>
+    <p class="modal-subtitle">
+      Create a free Dap IN account, then head to Settings and tap
+      "Build your own community" to set up your first session.
+    </p>
+    <a class="btn btn-primary modal-cta" href="https://in.dapin.app" style="width: 100%;">Continue to Dap IN</a>
+  </div>
+</div>
 
 <!-- ======== Footer ======== -->
 <footer class="site-footer">
