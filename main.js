@@ -256,6 +256,33 @@
 
   initModal(document.getElementById('download-modal'), '[data-download-trigger]');
   initModal(document.getElementById('host-modal'), '[data-host-trigger]');
+  initModal(document.getElementById('pro-modal'), '[data-pro-trigger]');
+
+  /* ---------- Pro upgrade form ---------- */
+
+  var proForm = document.querySelector('[data-pro-form]');
+  if (proForm) {
+    proForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = proForm.querySelector('#pro-name').value;
+      var email = proForm.querySelector('#pro-email').value;
+      var message = proForm.querySelector('#pro-message').value;
+      var subject = 'Pro upgrade request from ' + name;
+      var body =
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        (message ? message : '(no additional details)');
+      var mailto =
+        'mailto:team.dapin@gmail.com' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+      var note = proForm.querySelector('.form-note');
+      if (note) {
+        note.textContent = 'Opening your email app to send this to team.dapin@gmail.com...';
+      }
+    });
+  }
 
   /* ---------- Contact form ---------- */
 
