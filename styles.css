@@ -2352,18 +2352,13 @@ section[id] {
 
 .pr-table td {
   padding: 14px 28px;
-  border-bottom: 1px solid var(--border);
   color: var(--ink);
 }
 
-.pr-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Pro column gets a soft, continuous green wash down the table */
+/* Pro column gets a visible, continuous green wash down the table */
 .pr-table th:nth-child(3),
 .pr-table td:nth-child(3) {
-  background: rgba(45, 90, 61, 0.05);
+  background: var(--activity-bg);
 }
 
 .pr-group-row td {
@@ -2380,8 +2375,6 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  white-space: nowrap;
 }
 
 .pr-check {
@@ -2391,10 +2384,12 @@ section[id] {
 
 .pr-cross {
   color: var(--muted);
+  font-weight: 700;
 }
 
 .pr-soon {
   display: inline-block;
+  margin-left: 8px;
   padding: 2px 8px;
   border-radius: 100px;
   background: var(--btn-fill);
