@@ -2315,50 +2315,73 @@ section[id] {
   margin-top: 64px;
   overflow-x: auto;
   border-radius: 16px;
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
 }
 
 .pr-table {
   width: 100%;
-  min-width: 560px;
+  min-width: 620px;
   border-collapse: collapse;
   background: var(--bg-white);
   font-size: 14.5px;
 }
 
 .pr-table th {
-  background: var(--accent);
-  color: #fff;
+  color: var(--muted);
   font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
   text-align: left;
-  padding: 14px 20px;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--border);
 }
 
-.pr-table th:not(:first-child),
-.pr-table td:not(:first-child) {
+.pr-table th:nth-child(2),
+.pr-table td:nth-child(2) {
   text-align: center;
-  width: 120px;
+  width: 140px;
+  padding-left: 40px;
+}
+
+.pr-table th:nth-child(3),
+.pr-table td:nth-child(3) {
+  text-align: center;
+  width: 140px;
+  padding-left: 56px;
 }
 
 .pr-table td {
-  padding: 12px 20px;
+  padding: 14px 28px;
   border-bottom: 1px solid var(--border);
   color: var(--ink);
 }
 
-.pr-table tbody tr.alt {
-  background: var(--bg-beige);
+.pr-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Pro column gets a soft, continuous green wash down the table */
+.pr-table th:nth-child(3),
+.pr-table td:nth-child(3) {
+  background: rgba(45, 90, 61, 0.05);
 }
 
 .pr-group-row td {
-  background: var(--activity-bg);
+  background: #f3f1ec;
   color: var(--ink);
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 12px 20px;
-  border-bottom: none;
+  font-size: 16px;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  padding: 16px 28px;
+}
+
+.pr-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .pr-check {
@@ -2372,16 +2395,15 @@ section[id] {
 
 .pr-soon {
   display: inline-block;
-  margin-left: 6px;
   padding: 2px 8px;
   border-radius: 100px;
   background: var(--btn-fill);
   color: var(--muted);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  vertical-align: middle;
+  white-space: nowrap;
 }
 
 /* ---- Pro perks ---- */
