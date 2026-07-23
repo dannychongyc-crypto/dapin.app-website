@@ -7,7 +7,7 @@
 <meta name="description" content="The tools that make running a community effortless: circle split, member management, payments and payouts, group chat, reminders, and more."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=DM+Mono:wght@500&family=Fraunces:wght@600;700&display=swap"/>
 <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -316,6 +316,142 @@
     </div>
   </div>
 </section>
+
+<!-- ======== Pricing ======== -->
+<section class="pr-section">
+  <div class="container">
+    <p class="pr-label reveal">Pricing</p>
+    <h2 class="section-headline reveal" style="max-width: none; transition-delay: 60ms;">Two plans. Free is fully functional. Pro is for hosts serious about growing.</h2>
+    <p class="pr-sub reveal" style="transition-delay: 120ms;">First 3 months of Pro, free.</p>
+
+    <div class="pr-cards" data-stagger>
+      <div class="pr-card">
+        <p class="pr-plan-label">Free</p>
+        <div class="pr-price">RM0</div>
+        <p class="pr-price-sub">Always free</p>
+        <a href="https://in.dapin.app" class="btn btn-outline-accent" style="width: 100%; margin-top: 24px;">Get started</a>
+      </div>
+      <div class="pr-card pro">
+        <p class="pr-plan-label pro-chip">Pro</p>
+        <div class="pr-price">RM45</div>
+        <p class="pr-price-sub">per month &middot; first 2 months free</p>
+        <p class="pr-price-note">7% &rarr; 5.5% payment processing fee</p>
+        <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 24px;" data-pro-trigger>Upgrade to Pro</button>
+      </div>
+    </div>
+
+    <div class="pr-table-wrap reveal" style="transition-delay: 180ms;">
+      <table class="pr-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="pr-group-row"><td colspan="3">Session management</td></tr>
+          <tr><td>Create and publish sessions</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Set max capacity + waitlist</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Co-host access (up to 2)</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Multiple co-hosts (up to 5)</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Schedule session posting</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+
+          <tr class="pr-group-row"><td colspan="3">Member management</td></tr>
+          <tr><td>Guest list with attendance history</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Unlimited members</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Flag / remove problematic members</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Manual circle matching</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Export member list</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+
+          <tr class="pr-group-row"><td colspan="3">Payments</td></tr>
+          <tr><td>All payments through Dap IN</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Automatic payment confirmation</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Custom session pricing</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Revenue payout history + statements</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Early bird pricing</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span><span class="pr-soon">Coming soon</span></td></tr>
+          <tr class="alt"><td>Promo / discount codes</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span><span class="pr-soon">Coming soon</span></td></tr>
+
+          <tr class="pr-group-row"><td colspan="3">Communication</td></tr>
+          <tr><td>Broadcast to confirmed guests</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Session reminders, push notification</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span><span class="pr-soon">Coming soon</span></td></tr>
+          <tr><td>Session reminders, email</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span><span class="pr-soon">Coming soon</span></td></tr>
+
+          <tr class="pr-group-row"><td colspan="3">Analytics</td></tr>
+          <tr><td>Basic session stats (attendance, revenue)</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Member return frequency</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Member sign-up form data</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Member demographics (age, location)</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Retention heatmap</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Revenue trends + forecasting</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Export reports (CSV / PDF)</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+
+          <tr class="pr-group-row"><td colspan="3">Community branding</td></tr>
+          <tr><td>Community name + description</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr class="alt"><td>Profile photo + cover image</td><td><span class="pr-check">&#10003;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+          <tr><td>Verified host badge</td><td><span class="pr-cross">&#10005;</span></td><td><span class="pr-check">&#10003;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pr-perks" data-stagger>
+      <div class="pr-perk">
+        <span class="pr-perk-icon" aria-hidden="true">&#127911;</span>
+        <div>
+          <h3>Priority support</h3>
+          <p>24-hour response guaranteed.</p>
+        </div>
+      </div>
+      <div class="pr-perk">
+        <span class="pr-perk-icon" aria-hidden="true">&#129309;</span>
+        <div>
+          <h3>Brand deal pipeline</h3>
+          <p>We bring the deals, you focus on hosting.</p>
+        </div>
+      </div>
+      <div class="pr-perk">
+        <span class="pr-perk-icon" aria-hidden="true">&#128640;</span>
+        <div>
+          <h3>Early feature access</h3>
+          <p>Shape the product before everyone else.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-closing reveal">
+      <h3>Ready to go Pro?</h3>
+      <a href="https://in.dapin.app" class="btn btn-primary">Start your free 3 months</a>
+      <p class="pr-closing-note">No commitment. Cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Pro upgrade modal ======== -->
+<div class="modal-overlay" id="pro-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pro-modal-title">
+    <button class="modal-close" type="button" data-modal-close aria-label="Close">&times;</button>
+    <h2 class="modal-title" id="pro-modal-title">Upgrade to Pro</h2>
+    <p class="modal-subtitle">
+      Leave your details and we'll set up your Pro account and get back to you.
+    </p>
+    <form class="pr-modal-form" data-pro-form>
+      <div class="form-field">
+        <label for="pro-name">Name</label>
+        <input id="pro-name" name="name" type="text" placeholder="Your name" required/>
+      </div>
+      <div class="form-field">
+        <label for="pro-email">Email</label>
+        <input id="pro-email" name="email" type="email" placeholder="you@example.com" required/>
+      </div>
+      <div class="form-field">
+        <label for="pro-message">Anything we should know?</label>
+        <textarea id="pro-message" name="message" placeholder="Your community, session size, questions..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary modal-cta" style="width: 100%;">Send request</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
 
 <!-- ======== Closing CTA ======== -->
 <section class="section cta-closing cta-closing-white">
