@@ -981,6 +981,21 @@ a {
     box-shadow: none !important;
   }
 
+  .team-card {
+    gap: 16px;
+  }
+
+  .team-card .avatar {
+    width: 88px;
+    height: 88px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
   .team-grid {
     grid-template-columns: 1fr;
   }
@@ -988,10 +1003,12 @@ a {
   .team-card {
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .team-card .avatar {
+    width: 100px;
+    height: 100px;
   }
 }
 
