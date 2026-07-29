@@ -207,7 +207,7 @@
 
   /* ---------- Modal helper (download modal, host signup modal) ---------- */
 
-  function initModal(modalEl, triggerSelector) {
+  function initModal(modalEl, triggerSelector, simultaneousUrl) {
     if (!modalEl) return;
     var lastFocused = null;
 
@@ -237,6 +237,9 @@
     document.querySelectorAll(triggerSelector).forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
+        if (simultaneousUrl) {
+          window.open(simultaneousUrl, '_blank', 'noopener');
+        }
         openModal();
       });
     });
@@ -255,8 +258,40 @@
   }
 
   initModal(document.getElementById('download-modal'), '[data-download-trigger]');
-  initModal(document.getElementById('host-modal'), '[data-host-trigger]');
+  initModal(document.getElementById('host-modal'), '[data-host-trigger]', 'https://in.dapin.app');
   initModal(document.getElementById('pro-modal'), '[data-pro-trigger]');
+
+  /* ---------- Shared form submission (FormSubmit.co relay, no backend) ---------- */
+
+  function submitFormEmail(formEl, fields, opts) {
+    var note = formEl.querySelector('.form-note');
+    var submitBtn = formEl.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+    if (note) note.textContent = 'Sending...';
+
+    fetch('https://formsubmit.co/ajax/team.dapin@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(fields)
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Request failed');
+        return res.json();
+      })
+      .then(function () {
+        if (note) note.textContent = opts.successMessage;
+        formEl.reset();
+      })
+      .catch(function () {
+        if (note) {
+          note.textContent =
+            'Something went wrong sending this. Please email us directly at team.dapin@gmail.com.';
+        }
+      })
+      .finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
+  }
 
   /* ---------- Pro upgrade form ---------- */
 
@@ -267,20 +302,16 @@
       var name = proForm.querySelector('#pro-name').value;
       var email = proForm.querySelector('#pro-email').value;
       var message = proForm.querySelector('#pro-message').value;
-      var subject = 'Pro upgrade request from ' + name;
-      var body =
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        (message ? message : '(no additional details)');
-      var mailto =
-        'mailto:team.dapin@gmail.com' +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      window.location.href = mailto;
-      var note = proForm.querySelector('.form-note');
-      if (note) {
-        note.textContent = 'Opening your email app to send this to team.dapin@gmail.com...';
-      }
+      submitFormEmail(
+        proForm,
+        {
+          name: name,
+          email: email,
+          message: message || '(no additional details)',
+          _subject: 'Pro upgrade request from ' + name
+        },
+        { successMessage: 'Thanks! We’ve got your request and will be in touch soon.' }
+      );
     });
   }
 
@@ -294,20 +325,17 @@
       var email = form.querySelector('#contact-email').value;
       var subject = form.querySelector('#contact-subject').value;
       var message = form.querySelector('#contact-message').value;
-      var mailSubject = subject + ' from ' + name;
-      var body =
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        message;
-      var mailto =
-        'mailto:team.dapin@gmail.com' +
-        '?subject=' + encodeURIComponent(mailSubject) +
-        '&body=' + encodeURIComponent(body);
-      window.location.href = mailto;
-      var note = form.querySelector('.form-note');
-      if (note) {
-        note.textContent = 'Opening your email app to send this to team.dapin@gmail.com...';
-      }
+      submitFormEmail(
+        form,
+        {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+          _subject: subject + ' from ' + name
+        },
+        { successMessage: 'Thanks, your message is on its way. We’ll get back to you soon.' }
+      );
     });
   }
 })();
