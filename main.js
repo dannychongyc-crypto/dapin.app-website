@@ -290,11 +290,24 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var name = form.querySelector('#contact-name').value;
+      var email = form.querySelector('#contact-email').value;
+      var subject = form.querySelector('#contact-subject').value;
+      var message = form.querySelector('#contact-message').value;
+      var mailSubject = subject + ' from ' + name;
+      var body =
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        message;
+      var mailto =
+        'mailto:team.dapin@gmail.com' +
+        '?subject=' + encodeURIComponent(mailSubject) +
+        '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
       var note = form.querySelector('.form-note');
       if (note) {
-        note.textContent = 'Thanks, your message is on its way. We’ll get back to you soon.';
+        note.textContent = 'Opening your email app to send this to team.dapin@gmail.com...';
       }
-      form.reset();
     });
   }
 })();
