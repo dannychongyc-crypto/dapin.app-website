@@ -1,4 +1,12 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/clubs", "destination": "/", "statusCode": 302 },
+    {
+      "source": "/clubs/:slug",
+      "destination": "https://dapin-og.vercel.app/clubs/:slug",
+      "statusCode": 302
+    }
+  ]
 }
