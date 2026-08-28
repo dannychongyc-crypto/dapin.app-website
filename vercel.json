@@ -5,7 +5,7 @@
     { "source": "/clubs", "destination": "/", "statusCode": 302 },
     {
       "source": "/clubs/:slug",
-      "destination": "https://dapin-og.vercel.app/clubs/:slug",
+      "destination": "https://dapin-redirect.vercel.app/clubs/:slug",
       "statusCode": 302
     }
   ]
